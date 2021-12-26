@@ -15,76 +15,32 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
         <!-- <link href="css/sticky-footer.css" rel="stylesheet"> -->
     </head>
     <!-- style="background-color:#30373E" -->
     <body id="page-top" style="background-image: url(assets/img/gmjamcover.jpg);background-repeat: no-repeat;">
-        <!-- Navigation-->
-        <style>
-            /* Popup container */
-           .popup {
-           position: relative;
-           display: inline-block;
-           cursor: pointer;
-           }
-
-           /* The actual popup (appears on top) */
-           .popup .popuptext {
-           visibility: hidden;
-           width: 160px;
-           background-color: #555;
-           color: #fff;
-           text-align: center;
-           border-radius: 6px;
-           padding: 8px 0;
-           position: absolute;
-           z-index: 1;
-           top: 125%;
-           left: 80%;
-           margin-left: -50px;
-           }
-
-           /* Popup arrow */
-           .popup .popuptext::after {
-           content: "";
-           position: absolute;
-           bottom: 100%;
-           left: 50%;
-           margin-left: -5px;
-           border-width: 5px;
-           border-style: solid;
-           border-color: #555 transparent transparent transparent;
-           }
-
-           /* Toggle this class when clicking on the popup container (hide and show the popup) */
-           .popup .show {
-           visibility: visible;
-           -webkit-animation: fadeIn 1s;
-           animation: fadeIn 1s
-           }
-
-           /* Add animation (fade in the popup) */
-           @-webkit-keyframes fadeIn {
-           from {opacity: 0;}
-           to {opacity: 1;}
-           }
-
-           @keyframes fadeIn {
-           from {opacity: 0;}
-           to {opacity:1 ;}
-           } 
-         </style>
-         <script src="mobile-detect.js"></script>
-         <script>
-            function myFunction() {
-              var popup = document.getElementById("myPopup");
-              popup.classList.toggle("show");
+        <script>
+            function show() {
+                document.getElementById("jam1").style.visibility = "visible";
+                document.getElementById("jam2").style.visibility = "visible";
             }
             var md = new MobileDetect(window.navigator.userAgent);
             if (md.mobile() || md.tablet()) {
                 document.location.href = 'mobile-home.html';
             }
         </script>
+        <!-- Navigation-->
+        <style>
+            .visi {
+                visibility: hidden;
+            }
+         </style>
+         <script src="mobile-detect.js"></script>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"  style="background-color: #0f5132">
             <div class="container">
 <!--                <a class="navbar-brand" href="#page-top"><img style="min-height: 100px"src="assets/img/gmjam.png" alt="..." /></a>-->
@@ -96,20 +52,13 @@
                     <ul class="navbar-nav text-uppercase">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <div class="popup" onmouseover="myFunction()">
-                            <li class="nav-item"><a class="nav-link" href="events.html">Past Jams</a></li>
-                            <span class="popup popuptext" id="myPopup">
-                                <ul class=" popup dropdown-menu dropdown-menu-dark dropdown-menu-macos mx-0 border-0 shadow" style="width: 220px;">
-                                    <li><a class="dropdown-item active" href="events.html">G/M Jam '20</a></li>
-                                    <li><a class="dropdown-item" href="#">G/M Jam '21</a></li>
-                                </ul>
-                            </span>
-                        </div>
+                        <li class="nav-item"><a class="nav-link" id="visiclick" onclick="show()" href="#!">Events</a></li>
+                        <li class="nav-item"><a class="nav-link visi" id="jam1" href="#!">Jam '20</a></li>
+                        <li class="nav-item"><a class="nav-link visi" id="jam2" href="#!">Jam '21</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- color background-color: #30373E; -->
         <!-- Masthead-->
         <header class="masthead">
             <div class="container"  style="padding-top: 5%;">
